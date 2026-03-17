@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: realtime-chat-api
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 18
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: CLIENT_URL
+        sync: false
+      - key: CLOUDINARY_CLOUD_NAME
+        allowDeploy: false
+      - key: CLOUDINARY_API_KEY
+        allowDeploy: false
+      - key: CLOUDINARY_API_SECRET
+        allowDeploy: false
