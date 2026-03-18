@@ -1,7 +1,7 @@
 import express from 'express';
 import { protect } from '../middleware/auth.js';
 import upload from '../middleware/upload.js';
-import { getChatHistory, uploadImageMessage, deleteMessage } from '../controllers/messageController.js';
+import { getChatHistory, uploadImageMessage, deleteMessage, reactToMessage } from '../controllers/messageController.js';
 
 const router = express.Router();
 
@@ -19,5 +19,6 @@ router.post('/image', protect, upload.single('image'), async (req, res, next) =>
   }
 }, uploadImageMessage);
 router.delete('/:id', protect, deleteMessage);
+router.post('/:id/react', protect, reactToMessage);
 
 export default router;

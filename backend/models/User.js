@@ -36,6 +36,17 @@ const userSchema = new mongoose.Schema(
       type: Date,
       default: Date.now,
     },
+    bio: {
+      type: String,
+      default: '',
+      maxlength: [150, 'Bio cannot exceed 150 characters'],
+    },
+    blockedUsers: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+      },
+    ],
   },
   {
     timestamps: true,
