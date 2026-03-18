@@ -20,7 +20,7 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 const httpServer = createServer(app);
-const corsOrigins = (process.env.CLIENT_URL || 'https://real-time-chat-application-tan-zeta.vercel.app/').split(',').map(u => u.trim());
+const corsOrigins = (process.env.CLIENT_URL || 'https://real-time-chat-application-orcin-two.vercel.app/').split(',').map(u => u.trim());
 const io = new Server(httpServer, {
   cors: {
     origin: corsOrigins,
